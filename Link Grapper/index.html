@@ -13,18 +13,22 @@
   </head>
   <body>
     <div id="outer">
-      <input type="text" id="inputText" />
+      <input placeholder="Enter Link" type="text" id="inputText" />
       <button class="btn" id="inputBtn">Save Link</button>
       <button class="btn" id="saveTab">Save Tab</button>
       <button class="btn" id="deleteBtn">Delete All</button>
       <!-- <button id="downloadBtn">Download</button> -->
       <div class="inner">
-        <ol id="list">
-          
-        </ol>
+        <ol id="list"></ol>
       </div>
     </div>
   </body>
   <script src="index.js"></script>
-  <!-- <script src="abc.js"></script> -->
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    for (let i = 0; i < bookmarks.length; i++) {
+      document.getElementById(`${i}`).addEventListener("click", deleteLink(`${i}`));
+    }
+  });
+  </script> -->
 </html>
