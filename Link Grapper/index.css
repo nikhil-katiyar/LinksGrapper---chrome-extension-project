@@ -1,0 +1,76 @@
+body {
+  background-color: rgb(167, 213, 221);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /* display: flex; */
+  min-width: 400px;
+  margin-bottom: 20px;
+}
+div#outer {
+  height: 90px;
+  padding: 0px 5px;
+  background-image: url(image.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: cover;
+}
+
+.inner {
+  /* padding-top: 1px;*/
+  /* padding-bottom: 1px; */
+  width: 400px;
+  background-color: #faf4f4;
+}
+
+li a {
+  color: rgb(19, 121, 10);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-color: chartreuse;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* border-style: groove; */
+}
+
+.btn {
+  padding: 5px 10px;
+  width: fit-content;
+  font-weight: bold;
+  border-width: 1px;
+}
+
+#inputBtn {
+  color: white;
+  background-color: rgba(44, 103, 230, 0.8);
+  border-style: solid;
+}
+#saveTab {
+  color: aliceblue;
+  margin-left: 10px;
+  background-color: rgb(59, 155, 50);
+}
+
+#deleteBtn {
+  color: rgb(0, 0, 0);
+  border-style: groove;
+  border-color: red;
+  margin-left: 10px;
+}
+
+#downloadBtn {
+  color: rgb(255, 255, 255);
+  background-color: rgb(82, 82, 82);
+  margin-left: 20px;
+  border: 1px;
+  padding: 2px 5px;
+}
+
+.fa {
+  background-color: #faf4f4;
+  font-size: 15px;
+  border: none;
+  margin-left: 20px;
+}
