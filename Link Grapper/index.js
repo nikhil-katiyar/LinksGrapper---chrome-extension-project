@@ -3,7 +3,7 @@ const inputs = document.getElementById("inputText");
 const list = document.getElementById("list");
 const deleteAll = document.querySelector("#deleteBtn");
 const saveTab = document.querySelector("#saveTab");
-// var d = document.getElementsByClassName("fa-scissors");
+let list_items = [];
 // const download = document.getElementById("downloadBtn");
 
 //URL FOR REGEX CHECKING
@@ -28,38 +28,33 @@ function render(array) {
   let listItems = "";
   for (let i = 0; i < array.length; i++) {
     listItems += `
-    <li id="${i + "A"}">
+    <li>
         <a  href = "${array[i]}" target="_blank">
             ${array[i]}
         </a>
-        <button onclick = "deleteLink(this.id) " class="fa fa-scissors" id="${i}"></button>
+        <button class="fa fa-scissors list-items" id="${i}"></button>
     </li>`;
   }
   list.innerHTML = listItems;
-  // d = document.getElementsByClassName("fa-scissors");
-  // console.log(d);
-  // console.log(d.length);
+  list_items = Array.from(document.getElementsByClassName("list-items"));
+
+  // console.log(list_items);
+  // console.log(list_items.length);
 }
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   for (let i = 0; i < bookmarks.length; i++) {
-//     document
-//       .getElementById(`${i}`)
-//       .addEventListener("click", deleteLink(`${i}`));
-//   }
-// });
-
-// for (let i = 0; i < d.length; i++) {
-//   d[i].onclick = deleteLink;
-// }
+// console.log(list_items);
 
 //TO DELETE INDIVIDUAL LINKS
-function deleteLink(id) {
-  console.log("ggfhgfhfgfh");
-  bookmarks.splice(parseInt(id), 1);
-  window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
-  render(bookmarks);
-}
+list_items.forEach((item) => {
+  item.addEventListener("click", function () {
+    bookmarks.splice(parseInt(item.id), 1);
+    window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    render(bookmarks);
+    window.location.reload();
+    // (el) => {
+    //   console.log(el.target);
+    // }
+  });
+});
 
 //SAVE LINK BUTTON EVENT LISTENER
 save.addEventListener("click", function () {
@@ -69,7 +64,8 @@ save.addEventListener("click", function () {
     window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     render(bookmarks);
   }
-  createfile();
+  window.location.reload();
+  // createfile();
 });
 
 //SAVE TAB BUTTON EVENT LISTENER
@@ -79,6 +75,7 @@ saveTab.addEventListener("click", function () {
     window.localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     render(bookmarks);
   });
+  window.location.reload();
 });
 
 //DELETE ALL BUTTON EVENT LISTENER
