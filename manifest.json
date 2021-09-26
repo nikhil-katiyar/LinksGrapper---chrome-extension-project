@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "version": "1.2",
+  "description": "Links Saver and Bookmark, chrome extension build by ~Nikhil Katiyar",
+  "name": "Links Grapper",
+  "permissions": ["tabs"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "icon.png"
+  }
+}
